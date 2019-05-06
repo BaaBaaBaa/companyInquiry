@@ -1,0 +1,17 @@
+﻿http://106.14.151.119:3000/api
+
+http://localhost:3000/api/all 返回所有数据（小心卡死）
+http://localhost:3000/api/test 返回地址瑶湖西的公司（方便开发使用）
+http://localhost:3000/api/findOne?id=5cb6791c5e8f94c6e48930cf 返回指定id的doc
+
+
+参数：
+page(页数) 默认第一页 http://106.14.151.119:3000/api/search?address=瑶湖西&page=2
+address:(地址) http://106.14.151.119:3000/api/search?address=瑶湖西
+legalPerson (法定代表人) http://106.14.151.119:3000/api/search?address=瑶湖西&legalPerson=xxx
+creditCode（社会统一信用码）
+name（公司名称）
+phone（电话）
+scope（经营范围）
+
+	
