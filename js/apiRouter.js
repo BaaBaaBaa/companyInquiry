@@ -54,19 +54,16 @@ api.get('/search',(req,res,next)=> {
     })
 });
 
-api.get('/mytest',(req,res,next)=> {
-    dbData.mySearch('companies',1,{'address':'瑶湖西'},function(result){
-        //console.log(result);
-        res.send(result);
-    })
-});
-
 api.get('/findOne?',(req,res,next)=>{
     console.log(req.url);
     var id =req.url.split("=")[1];
     dbData.findOne('companies',id,function (result) {
         res.send(result);
     })
+});
+
+api.get('/mytest',(req,res,next)=> {
+    dbData.addOne("test",{});
 });
 
 //router.listen(3000);

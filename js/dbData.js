@@ -80,7 +80,51 @@ let dbData = {
                 callback(result);
             })
         });
+    },
+    addOne:function (name,docOBJ,) {
+        let mongoose = require('mongoose');
+        mongoose.connect('mongodb://localhost:27017/lxf',{ useNewUrlParser: true },(err, db) => {
+            var Schema=new mongoose.Schema({
+                name:        { type:String },
+                province:    { type:String },
+                city:        { type:String },
+                legalPerson: { type:String },
+                type:        { type:String },
+                setupTime:   { type:String },
+                capital:     { type:String },
+                address:     { type:String },
+                mail:        { type:String },
+                scope:       { type:String },
+                website:     { type:String },
+                phone:       { type:String },
+                morePhone:   { type:String }
+            });
+            var company=mongoose.model("company",Schema);
+            var addData=new company({
+                name:        "云公司",
+                province:    "江西",
+                city:        "南昌",
+                legalPerson: "lxf",
+                type:        "无限责任公司",
+                setupTime:   "今天",
+                capital:     "3个亿",
+                address:     "云地址",
+                mail:        "无",
+                scope:       "破产、吹牛皮",
+                website:     "",
+                phone:       "",
+                morePhone:   ""
+            });
+            addData.save(function(err, res) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(res);
+                }
+            });
+        });
     }
+
 
 }
 
